@@ -1,0 +1,10 @@
+{ "vaults" : [
+    { "name": "Cofre 1", "id": 213, "folders": 1, "action": 0},
+    { "name": "Cofre 2", "id": 413, "folders": 4, "action": 0},
+    { "name": "Cofre 3", "id": 546, "folders": 6, "action": 0},
+    { "name": "Cofre 4", "id": 724, "folders": 1, "action": 0},
+    { "name": "Cofre 5", "id": 723, "folders": 0, "action": 0},
+    { "name": "Cofre 6", "id": 842, "folders": 2, "action": 0},
+    { "name": "Cofre 7", "id": 682, "folders": 3, "action": 0},
+    { "name": "Cofre 8", "id": 997, "folders": 3, "action": 0}
+  ]}
