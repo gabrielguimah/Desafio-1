@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import { Layout, PageHeader, Table, Input, Button, Space } from "antd";
-import { DeleteOutlined } from "@ant-design/icons";
 import "antd/dist/antd.css";
+import axios from "axios";
 
 const { Content } = Layout;
 const { Search } = Input;
 
 function App() {
+  const baseUrl = "http://localhost:3001/vaults";
   const [data, setData] = useState([]);
 
   const columns = [
@@ -32,33 +33,35 @@ function App() {
       dataIndex: "id",
       render: (id: any) => (
         <>
-          <Button type="primary" shape="round" danger onClick={() => id}>
-            {" "}
-            Deletar{" "}
-          </Button>
+          <Button
+            type="primary"
+            shape="round"
+            danger
+            onClick={() => id}
+          ></Button>
         </>
       ),
     },
   ];
 
-  const deleteMethod = {
-    method: "DELETE",
-    headers: {
-      "Content-type": "application/json; charset=UTF-8",
-    },
+  const Get = async () => {
+    try {
+      const { data } = await axios.get(baseUrl);
+      setData(data);
+      console.log(data);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
-  fetch("http://localhost:3001/vaults", deleteMethod)
-    .then((response) => response.json())
-    .then((data) => console.log(data))
-    .catch((err) => console.log(err));
+  useEffect(() => {
+    Get();
+  }, []);
 
-  useEffect(() => {}, [
-    fetch("http://localhost:3001/vaults")
-      .then((resp) => resp.json())
-      .then((resp) => setData(resp)),
-    console.log(data),
-  ]);
+  useEffect(() => {
+    axios.delete("http://localhost:3001/vaults").then();
+  }, []);
+
   return (
     <div>
       <Layout>
@@ -72,7 +75,7 @@ function App() {
           ></PageHeader>
         </Space>
         <Content>
-          <Table dataSource={data} columns={columns} />
+          <Table dataSource={data} columns={columns} rowKey={"id"} />
         </Content>
       </Layout>
     </div>
