@@ -25,15 +25,21 @@
       "action": 0
     },
     {
-      "name": "Cofre 7",
-      "id": 7,
-      "folders": 3,
+      "name": "Cofre 5",
+      "id": 5,
+      "folders": 0,
       "action": 0
     },
     {
       "name": "Cofre 6",
       "id": 6,
       "folders": 2,
+      "action": 0
+    },
+    {
+      "name": "Cofre 7",
+      "id": 7,
+      "folders": 3,
       "action": 0
     },
     {

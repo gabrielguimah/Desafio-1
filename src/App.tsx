@@ -56,7 +56,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    axios.delete("http://localhost:3001/vaults/").then();
+    axios.delete("http://localhost:3001/vaults").then();
   }, []);
 
   return (
