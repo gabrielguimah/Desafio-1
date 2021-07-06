@@ -1,6 +1,12 @@
 {
   "vaults": [
     {
+      "name": "Cofre 1",
+      "id": 1,
+      "folders": 3,
+      "action": 0
+    },
+    {
       "name": "Cofre 2",
       "id": 2,
       "folders": 4,
@@ -22,6 +28,12 @@
       "name": "Cofre 7",
       "id": 7,
       "folders": 3,
+      "action": 0
+    },
+    {
+      "name": "Cofre 6",
+      "id": 6,
+      "folders": 2,
       "action": 0
     },
     {

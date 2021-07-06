@@ -33,12 +33,9 @@ function App() {
       dataIndex: "id",
       render: (id: any) => (
         <>
-          <Button
-            type="primary"
-            shape="round"
-            danger
-            onClick={() => id}
-          ></Button>
+          <Button type="primary" shape="round" danger onClick={() => id}>
+            Deletar
+          </Button>
         </>
       ),
     },
@@ -59,7 +56,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    axios.delete("http://localhost:3001/vaults").then();
+    axios.delete("http://localhost:3001/vaults/").then();
   }, []);
 
   return (
