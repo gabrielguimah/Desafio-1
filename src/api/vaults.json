@@ -1,51 +1,39 @@
 {
   "vaults": [
     {
-      "name": "Cofre 1",
-      "id": 1,
-      "folders": 3,
-      "action": 0
-    },
-    {
-      "name": "Cofre 2",
+      "name": "Apple Vault",
       "id": 2,
-      "folders": 4,
+      "folders": 633,
       "action": 0
     },
     {
-      "name": "Cofre 3",
+      "name": "Intel Vault",
       "id": 3,
-      "folders": 6,
+      "folders": 234,
       "action": 0
     },
     {
-      "name": "Cofre 4",
+      "name": "Microsoft Vault",
       "id": 4,
-      "folders": 1,
+      "folders": 1533,
       "action": 0
     },
     {
-      "name": "Cofre 5",
+      "name": "Amazon Vault",
       "id": 5,
-      "folders": 0,
+      "folders": 123,
       "action": 0
     },
     {
-      "name": "Cofre 6",
+      "name": "Discord Vault",
       "id": 6,
-      "folders": 2,
+      "folders": 432,
       "action": 0
     },
     {
-      "name": "Cofre 7",
+      "name": "Elon Musk Cofre Pessoal",
       "id": 7,
-      "folders": 3,
-      "action": 0
-    },
-    {
-      "name": "Cofre 8",
-      "id": 8,
-      "folders": 4,
+      "folders": 5922,
       "action": 0
     }
   ]
