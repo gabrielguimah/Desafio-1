@@ -25,7 +25,6 @@ function VaultsInfo() {
   const [data, setData] = useState<any[]>([]);
   const [form] = Form.useForm();
   const [vault_modal, setVaultModal] = useState("");
-  const [filteredData, setFilteredData] = useState(data);
   const [vault_param, setVaultParam] = useState({
     name: "",
     id: "",
@@ -33,16 +32,6 @@ function VaultsInfo() {
     action: "",
     vault_param: "",
   });
-
-  const handleSearch = (event: any) => {
-    let value = event.target.value.toLowerCase();
-    let result = [];
-    console.log(value);
-    result = data.filter((data) => {
-      return data.title.search(value) != -1;
-    });
-    setFilteredData(result);
-  };
 
   const onFinish = (values: any) => {
     console.log(values);
@@ -103,7 +92,6 @@ function VaultsInfo() {
     try {
       const { data } = await axios.get(baseUrl);
       setData(data);
-      setFilteredData(data);
       console.log(data);
     } catch (error) {
       console.log(error);
@@ -206,3 +194,25 @@ function VaultsInfo() {
 }
 
 export default VaultsInfo;
+
+{
+  /* <Search
+            type="text"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
+          {data.map((data) => {
+            if (
+              search == "" ||
+              data.name.toLowerCase().includes(search || "".toLowerCase())
+            ) {
+              return (
+                <li key={data.name}>
+                  <h3>ID: {data.id}</h3>
+                  <p>Nome: {data.name}</p>
+                </li>
+              );
+            }
+            return null;
+          })} */
+}
