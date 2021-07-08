@@ -10,6 +10,8 @@ import {
   Form,
   Modal,
   Switch,
+  Select,
+  Divider,
 } from "antd";
 import "antd/dist/antd.css";
 import axios from "axios";
@@ -23,6 +25,7 @@ function VaultsInfo() {
   const [data, setData] = useState<any[]>([]);
   const [form] = Form.useForm();
   const [vault_modal, setVaultModal] = useState("");
+  const [filteredData, setFilteredData] = useState(data);
   const [vault_param, setVaultParam] = useState({
     name: "",
     id: "",
@@ -30,6 +33,16 @@ function VaultsInfo() {
     action: "",
     vault_param: "",
   });
+
+  const handleSearch = (event: any) => {
+    let value = event.target.value.toLowerCase();
+    let result = [];
+    console.log(value);
+    result = data.filter((data) => {
+      return data.title.search(value) != -1;
+    });
+    setFilteredData(result);
+  };
 
   const onFinish = (values: any) => {
     console.log(values);
@@ -85,10 +98,12 @@ function VaultsInfo() {
     },
   ];
 
+  //Consome API
   const Get = async () => {
     try {
       const { data } = await axios.get(baseUrl);
       setData(data);
+      setFilteredData(data);
       console.log(data);
     } catch (error) {
       console.log(error);
@@ -99,6 +114,7 @@ function VaultsInfo() {
     Get();
   }, []);
 
+  //Deleta API
   const DeleteVault = async () => {
     const VaultID = form.getFieldValue("id");
     try {
@@ -109,6 +125,8 @@ function VaultsInfo() {
       console.log(error);
     }
   };
+
+  //Modal (não funcional)
   const ModalForm = () => {
     return (
       <>
@@ -137,11 +155,12 @@ function VaultsInfo() {
             <Item label="Pastas" name="folders">
               <Input name="folders" />
             </Item>
-            <Item label="Somente Ler" name="read">
-              <Switch />
-            </Item>
-            <Item label="Editar" name="edit">
-              <Switch />
+            <Item>
+              <Select defaultValue="Usuários" style={{ width: 120 }} />
+              <Divider type="vertical" />
+              <Switch /> Somente Leitura
+              <Divider type="vertical" />
+              <Switch /> Editar
             </Item>
             <Item label="id" name="id" hidden>
               <Input name="id" />
@@ -168,10 +187,12 @@ function VaultsInfo() {
           <PageHeader
             title="Cofre de Senhas"
             extra={[
-              <Search placeholder="Buscar" />,
-              <Button type="primary" onClick={() => ModalFunction("insert")}>
-                Novo Cofre
-              </Button>,
+              <>
+                <Search placeholder="Buscar"></Search>
+                <Button type="primary" onClick={() => ModalFunction("insert")}>
+                  Novo Cofre
+                </Button>
+              </>,
             ]}
           ></PageHeader>
         </Space>
