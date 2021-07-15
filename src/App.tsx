@@ -9,13 +9,15 @@ import {
   Space,
   Form,
   Modal,
-  Switch,
   Select,
   Divider,
+  Radio,
 } from "antd";
 import "antd/dist/antd.css";
 import axios from "axios";
+import SelectModal from "../src/components/SelectModal";
 
+const { Option } = Select;
 const { Content } = Layout;
 const { Search } = Input;
 const { Item } = Form;
@@ -87,7 +89,7 @@ function VaultsInfo() {
     },
   ];
 
-  //Consome API
+  //Consome API - Cofres
   const Get = async () => {
     try {
       const { data } = await axios.get(baseUrl);
@@ -114,6 +116,18 @@ function VaultsInfo() {
     }
   };
 
+  //Adicionar API
+  const PostAPI = async (values: any) => {
+    try {
+      const { data: new_vault } = await axios.post(baseUrl, values);
+      console.log(new_vault, "Cofre");
+      setData([...data, new_vault]);
+      ModalFunction("");
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   //Modal (não funcional)
   const ModalForm = () => {
     return (
@@ -130,7 +144,12 @@ function VaultsInfo() {
               .validateFields()
               .then((values) => {
                 form.resetFields();
+                if (vault_modal === "insert") {
+                  PostAPI(values);
+                } else {
+                }
               })
+
               .catch((info) => {
                 console.log("Validate Failed:", info);
               });
@@ -144,11 +163,14 @@ function VaultsInfo() {
               <Input name="folders" />
             </Item>
             <Item>
-              <Select defaultValue="Usuários" style={{ width: 120 }} />
+              <Item>
+                <SelectModal />
+              </Item>
               <Divider type="vertical" />
-              <Switch /> Somente Leitura
-              <Divider type="vertical" />
-              <Switch /> Editar
+              <Radio.Group name="radiogroup" defaultValue={1}>
+                <Radio value={1}>Somente Leitura</Radio>
+                <Radio value={2}>Editar</Radio>
+              </Radio.Group>
             </Item>
             <Item label="id" name="id" hidden>
               <Input name="id" />
@@ -194,25 +216,3 @@ function VaultsInfo() {
 }
 
 export default VaultsInfo;
-
-{
-  /* <Search
-            type="text"
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-          />
-          {data.map((data) => {
-            if (
-              search == "" ||
-              data.name.toLowerCase().includes(search || "".toLowerCase())
-            ) {
-              return (
-                <li key={data.name}>
-                  <h3>ID: {data.id}</h3>
-                  <p>Nome: {data.name}</p>
-                </li>
-              );
-            }
-            return null;
-          })} */
-}

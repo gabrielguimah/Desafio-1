@@ -1,0 +1,134 @@
+{
+  "users": [
+    {
+      "id": 31,
+      "name": "Ademir Vicente Machado Junior",
+      "type": "users.multi"
+    },
+    {
+      "id": 1,
+      "name": "admin",
+      "type": "users.multi"
+    },
+    {
+      "id": 42,
+      "name": "bruno.junior@congonhastravel.com.br",
+      "type": "users.multi"
+    },
+    {
+      "id": 623,
+      "name": "Comunicação Informatech",
+      "type": "users.multi"
+    },
+    {
+      "id": 3492,
+      "name": "Eduardo",
+      "type": "users.multi"
+    },
+    {
+      "id": 45,
+      "name": "Fábio Miguel Mello",
+      "type": "users.multi"
+    },
+    {
+      "id": 461,
+      "name": "Guilherme Valle",
+      "type": "users.multi"
+    },
+    {
+      "id": 2,
+      "name": "Gustavo Caniato",
+      "type": "users.multi"
+    },
+    {
+      "id": 4901,
+      "name": "Henrique Santos",
+      "type": "users.multi"
+    },
+    {
+      "id": 12217,
+      "name": "Igor Santos",
+      "type": "users.multi"
+    },
+    {
+      "id": 84,
+      "name": "Jonathan Bernardi",
+      "type": "users.multi"
+    },
+    {
+      "id": 6,
+      "name": "Juliano Nogueira",
+      "type": "users.multi"
+    },
+    {
+      "id": 1126,
+      "name": "Lucas Canto",
+      "type": "users.multi"
+    },
+    {
+      "id": 532,
+      "name": "Lucas Cardoso",
+      "type": "users.multi"
+    },
+    {
+      "id": 572,
+      "name": "Lucas Rocha",
+      "type": "users.multi"
+    },
+    {
+      "id": 624,
+      "name": "Luiz Pires",
+      "type": "users.multi"
+    },
+    {
+      "id": 101,
+      "name": "Marcio Correa",
+      "type": "users.multi"
+    },
+    {
+      "id": 7,
+      "name": "Marcio Jacson Dos Santos",
+      "type": "users.multi"
+    },
+    {
+      "id": 37,
+      "name": "Peter Prachthauser",
+      "type": "users.multi"
+    },
+    {
+      "id": 7078,
+      "name": "Rafael Adati",
+      "type": "users.multi"
+    },
+    {
+      "id": 4,
+      "name": "Rebeca Santos",
+      "type": "users.multi"
+    },
+    {
+      "id": 5106,
+      "name": "Renato Rezende",
+      "type": "users.multi"
+    },
+    {
+      "id": 593,
+      "name": "Ruy Ayres",
+      "type": "users.multi"
+    },
+    {
+      "id": 29,
+      "name": "Stevan Muller",
+      "type": "users.multi"
+    },
+    {
+      "id": 12,
+      "name": "Vanessa Visinheski",
+      "type": "users.multi"
+    },
+    {
+        "id":95,
+        "name":"William Deivid",
+        "type":"users.multi"
+    }
+  ]
+}

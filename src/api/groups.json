@@ -1,0 +1,11 @@
+{
+  "groups":[
+    {"group_id":20,"name":"Congonhas","type":"technical_groups.multi"},
+    {"group_id":22,"name":"FJN","type":"technical_groups.multi"},
+    {"group_id":2,"name":"Técnicos N2","type":"technical_groups.multi"},
+    {"group_id":1,"name":"Técnicos N1","type":"technical_groups.multi"},
+    {"group_id":3,"name":"Administrativo","type":"technical_groups.multi"},
+    {"group_id":10007,"name":"Desenvolvimento","type":"technical_groups.multi"},
+    {"group_id":5746,"name":"Técnicos Interna","type":"technical_groups.multi"}
+  ]
+}
